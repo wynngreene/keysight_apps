@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PoU Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  styles/main.css
+</head>
+<body>
+
+  <h1>PoU Tracker</h1>
+
+  <div class="container">
+    <!-- Card 1: Main Entry -->
+    <div class="card">
+      <form class="partsForm" id="form1">
+        <label for="employeeName1">Employee Name:</label>
+        <select id="employeeName1" name="employeeName" required>
+          <option value="" disabled selected>Select Employee</option>
+        </select>
+
+        <label for="partNumber1">Part Number:</label>
+        <select id="partNumber1" name="partNumber" required>
+          <option value="" disabled selected>Select Part</option>
+        </select>
+
+        <label for="jobNumber1">Job Number:</label>
+        <input type="text" id="jobNumber1" name="jobNumber" required>
+
+        <label for="quantity1">Quantity:</label>
+        <input type="number" id="quantity1" name="quantity" min="1" required>
+
+        <label for="datePulled1">Date Pulled:</label>
+        <div>
+          <button id="todayDateBtn" type="button">Today</button>
+          <input type="date" id="datePulled1" name="datePulled" required>
+        </div>
+
+        <input type="submit" value="Submit Entry">
+      </form>
+    </div>
+
+    <!-- Card 2: Add Dropdown Options -->
+    <div class="card">
+      <form id="addEmployeeForm">
+        <label for="employeeName2">Add Employee Name:</label>
+        <input type="text" id="employeeName2" name="employeeName">
+        <input type="submit" value="Add Employee">
+      </form>
+
+      <form id="addPartForm">
+        <label for="partNumber2">Add Part Number:</label>
+        <input type="text" id="partNumber2" name="partNumber">
+        <input type="submit" value="Add Part">
+      </form>
+    </div>
+  </div>
+
+  <!-- Export Buttons -->
+  <div style="text-align:center;">
+    <button id="exportBtn">Export to CSV</button>
+    <button id="exportTxtBtn">Export to TXT</button>
+  </div>
+
+  <!-- Data Table -->
+  <table id="dataTable">
+    <thead>
+      <tr>
+        <th>Employee Name</th>
+        <th>Job Number</th>
+        <th>Part Number</th>
+        <th>Quantity</th>
+        <th>Date Pulled</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Entries will appear here -->
+    </tbody>
+  </table>
+
+  <!-- JS -->
+  js/script.js</script>
+</body>
+</html>
