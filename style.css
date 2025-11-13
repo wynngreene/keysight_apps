@@ -1,5 +1,4 @@
-
-/* General Styles */
+/* ========== General Styles ========== */
 body {
   font-family: Arial, sans-serif;
   margin: 40px;
@@ -11,7 +10,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Card and Form Styling */
+/* ========== Card and Form Styling ========== */
 .card {
   background: white;
   padding: 20px;
@@ -29,7 +28,15 @@ label {
   font-weight: bold;
 }
 
-/* Inputs and Dropdowns */
+/* Group Today button + date nicely */
+.date-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 5px;
+}
+
+/* ========== Inputs and Dropdowns ========== */
 input[type="text"],
 input[type="number"],
 input[type="date"],
@@ -41,6 +48,7 @@ select {
   border-radius: 4px;
   font-size: 14px;
   background-color: #fff;
+  box-sizing: border-box;
 }
 
 select:focus,
@@ -48,22 +56,38 @@ input:focus {
   outline: 2px solid #007BFF;
 }
 
-/* Buttons */
-input[type="submit"],
-button {
-  margin-top: 20px;
+/* ========== Buttons ========== */
+
+/* Base button style */
+button,
+input[type="submit"] {
   background-color: #007BFF;
   color: white;
   border: none;
   padding: 10px;
-  width: 100%;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
 }
 
-input[type="submit"]:hover,
-button:hover {
+/* Full-width buttons used in forms */
+.full-width-btn {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Today button inside date-row */
+#todayDateBtn {
+  flex: 0 0 auto;
+}
+
+/* Date input takes remaining space */
+.date-row input[type="date"] {
+  flex: 1;
+}
+
+button:hover,
+input[type="submit"]:hover {
   background-color: #0056b3;
 }
 
@@ -73,7 +97,12 @@ input[type="submit"]:focus {
   outline-offset: 2px;
 }
 
-/* Export Buttons */
+/* Export Buttons container */
+.export-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
 #exportBtn,
 #exportTxtBtn {
   max-width: 200px;
@@ -81,7 +110,7 @@ input[type="submit"]:focus {
   display: inline-block;
 }
 
-/* Container Layout */
+/* ========== Container Layout ========== */
 .container {
   display: flex;
   flex-direction: row; /* Side by side by default */
@@ -89,18 +118,22 @@ input[type="submit"]:focus {
   justify-content: center;
 }
 
-.container > div {
+.container > .card {
   flex: 1; /* Equal width for children */
 }
 
-/* Responsive Design */
+/* ========== Responsive Design ========== */
 @media (max-width: 768px) {
+  body {
+    margin: 10px;
+  }
+
   .container {
     flex-direction: column; /* Stack vertically */
   }
 }
 
-/* Table Styling */
+/* ========== Table Styling ========== */
 table {
   margin: 40px auto;
   width: 90%;
